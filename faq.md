@@ -11,7 +11,7 @@
 
 # FAQ
 
-## [Are my assets locked once I create a swap?]
+## Are my assets locked once I create a swap?
 No.
 
 To recap, so far: 
