@@ -7,7 +7,7 @@
 # Contents
 
 - [Are my assets locked once I create a swap?](#are-my-assets-locked-once-I-create-a-swap)
-- [What happens if my parter accepts a swap but I don't have the assets any more?](#what-happens-if-my-parter-accepts-a-swap-but-I-don't-have-the-assets-any-more)
+- [What happens if my parter accepts a swap but I don't have the assets any more?](#what-happens-if-my-parter-accepts-a-swap-but-i-dont-have-the-assets-any-more)
 
 # FAQ
 
