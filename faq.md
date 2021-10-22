@@ -27,7 +27,7 @@
 
 ## How do I add (W)ETH to a swap? 
 1. We can only swap ERC20, ERC721, and ERC1155. So, we swap [WETH](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) which is ERC20, never pure ETH.
-2. When creating a swap, select the `+ add assets` button
+2. When creating a swap, select the `+ add assets` button.
 3. Select the `Form` button, fill it out, then submit:
     ```
     Asset Type    = ERC20
