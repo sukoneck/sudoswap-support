@@ -10,11 +10,13 @@
 - [How do I add (W)ETH to a swap?](#how-do-i-add-weth-to-a-swap) 
 
 ## [Troubleshooting FAQ](#troubleshooting-faq)
-- *forthcoming*
+- [Asset approvals](#asset-approvals)
+- [Transfer failed](#transfer-failed)
 
 ## [How sudoswap.xyz works FAQ](#how-sudoswapxyz-works-faq)
 - [Are my assets locked once I create a swap?](#are-my-assets-locked-once-I-create-a-swap)
 - [What happens if my parter accepts a swap but I don't have the assets any more?](#what-happens-if-my-parter-accepts-a-swap-but-i-dont-have-the-assets-any-more)
+- [Do I have to approve all of my assets?](#do-I-have-to-approve-all-of-my-assets)
 
 
 <!-- 
@@ -39,8 +41,23 @@
 
 # Troubleshooting FAQ
 
-## *forthcoming*
-- *forthcoming*
+## Asset approvals
+You attempt to create a swap but the `create swap` button is greyed out or you are receiving this message:
+```
+Please approve all offered assets first.
+```
+There are two reasons you would get this message:
+1. You have not approved one or more of the assets you are attempting to swap. So, make sure that each of the assets you are offering in the swap are approved.
+2. You submitted the approval transaction, but the approval transaction itself has not completed yet. So, make sure that all of your approval transactions have completed successfully.   
+
+## Transfer failed
+You attempt to accept a swap but are receiving this message:
+```
+Error: execution reverted: TRANSFER_FAILED
+```
+There are two common reasons that a swap fails:
+1. One or both people have already sent one of the assets somewhere else. So, the swap is no longer able to be filled. 
+2. An approval transaction hasn't successfully completed yet for one or more of the assets. So, the swap is not yet able to complete the swap. 
 
 <!-- 
   "how it works" is for when you want to understand the service  
@@ -49,7 +66,7 @@
 # How sudoswap.xyz works FAQ
 
 ## Are my assets locked once I create a swap?
-No.
+No. Assets never leave your wallet until someone accepts the swap.
 
 To recap, so far: 
 1. You approved for your assets to be swapped *only if that swap is accepted*.
@@ -69,3 +86,6 @@ To recap, so far:
 5. Your partner accepted the swap.
 
 So, since the swap cannot be fulfilled (due to step #3), the swap transaction will fail. 
+
+## Do I have to approve all of my assets?
+Yes. If you're swapping multiple items you need to approve each of them. There is unfortunately no way around this. 
