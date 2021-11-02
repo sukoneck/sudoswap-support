@@ -88,4 +88,4 @@ To recap, so far:
 So, since the swap cannot be fulfilled (due to step #3), the swap transaction will fail. 
 
 ## Do I have to approve all of my assets?
-Yes. If you're swapping multiple items you need to approve each of them. There is unfortunately no way around this. 
+Yes. If you or your partner are swapping multiple items you both need to approve each of them. There is unfortunately no way around this. 
