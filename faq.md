@@ -14,6 +14,7 @@
 - [Transfer failed](#transfer-failed)
 
 ## [How sudoswap.xyz works FAQ](#how-sudoswapxyz-works-faq)
+- [At what cost?](#at-what-cost)
 - [Are my assets locked once I create a swap?](#are-my-assets-locked-once-I-create-a-swap)
 - [What happens if my parter accepts a swap but I don't have the assets any more?](#what-happens-if-my-parter-accepts-a-swap-but-i-dont-have-the-assets-any-more)
 - [Do I have to approve all of my assets?](#do-I-have-to-approve-all-of-my-assets)
@@ -64,6 +65,15 @@ There are two common reasons that a swap fails:
  -->
 
 # How sudoswap.xyz works FAQ
+
+## At what cost?
+No fees, yes gas. There are NO fees; Sudoswap is free. However, there are unavoidable transactions that allow the swap to happen. These required transactions are: 
+
+1. Both partners have to approve their [assets](#do-I-have-to-approve-all-of-my-assets) to swap. 
+2. The swap accepter has to accept. 
+3. The swap creator has to pay to cancel it (if they want to).
+
+The gas price is up to you as always, but in general the computational cost of each of these transactions is pretty low. 
 
 ## Are my assets locked once I create a swap?
 No. Assets never leave your wallet until someone accepts the swap.
