@@ -99,4 +99,10 @@ To recap, so far:
 So, since the swap cannot be fulfilled (due to step #3), the swap transaction will fail. 
 
 ## Do I have to approve all of my assets?
+### Short answer
 Yes. If you or your partner are swapping multiple items you both need to approve each of them. There is unfortunately no way around this. 
+
+### Long answer
+In the ethereum world, approving an asset means you can give some program (i.e. smart contract) permission to move your asset. For example, when trading a token on uniswap the contract has to be able to take tokens out (of your address) and give you eth. In the same way, the 0x contracts that power sudoswap need to have your permission to take NFTs/tokens out (of your address) and give you the desired swap items in return. 
+
+Each token has its own contract so for every new asset you need a new approval transaction. For NFTs we can cheat a little bit using a function called `setApprovalForAll` which allows you to let someone (or some contract) spend any ID from an NFT collection. So, you only need to approve one time per NFT collection (even if there are multiple ids).
