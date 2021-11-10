@@ -56,9 +56,10 @@ You attempt to accept a swap but are receiving this message:
 ```
 Error: execution reverted: TRANSFER_FAILED
 ```
-There are two common reasons that a swap fails:
-1. One or both people have already sent one of the assets somewhere else. So, the swap is no longer able to be filled. 
-2. An approval transaction hasn't successfully completed yet for one or more of the assets. So, the swap is not yet able to complete the swap. 
+There are three common reasons that a swap fails. Ask yourself/partner:
+1. *Do you still own all of the assets?* One or both people may have already sent one of the assets somewhere else. So, the swap is no longer able to be filled. You may either leave the swap open indefinitely or cancel it. 
+2. *Are your approval transactions complete?* An approval transaction may still be in progress and hasn't successfully completed yet for one or more of the assets. So, the swap is not yet able to complete the swap. You may confirm the transaction status(es) in Etherscan.  
+3. *Are all of the assets encoded correctly?* One or more of the assets are incorrectly assigned the wrong ERC. E.g. an ERC-1155 being assigned as an ERC-721. You may confirm the asset types in asset's contract on Etherscan or in the details field in an NFT marketplace. 
 
 <!-- 
   "how it works" is for when you want to understand the service  
