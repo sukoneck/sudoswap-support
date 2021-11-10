@@ -18,7 +18,7 @@
 - [Are my assets locked once I create a swap?](#are-my-assets-locked-once-I-create-a-swap)
 - [What happens if my parter accepts a swap but I don't have the assets any more?](#what-happens-if-my-parter-accepts-a-swap-but-i-dont-have-the-assets-any-more)
 - [Do I have to approve all of my assets?](#do-I-have-to-approve-all-of-my-assets)
-
+- [Why can't I swap ETH?](#why-cant-i-swap-eth)
 
 <!-- 
   "how-to" is for when you want to know how to do something 
@@ -27,7 +27,7 @@
 # How-to FAQ
 
 ## How do I add (W)ETH to a swap? 
-1. We can only swap ERC20, ERC721, and ERC1155. So, we swap [WETH](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) which is ERC20, never pure ETH.
+1. We can only swap ERC20, ERC721, and ERC1155. So, we swap [WETH](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) which is ERC20, never pure ETH. [More info](#why-cant-i-swap-eth).
 2. When creating a swap, select the `+ add assets` button.
 3. Select the `Form` button, fill it out, then submit:
     ```
@@ -59,7 +59,7 @@ Error: execution reverted: TRANSFER_FAILED
 There are three common reasons that a swap fails. Ask yourself/partner:
 1. *Do you still own all of the assets?* One or both people may have already sent one of the assets somewhere else. So, the swap is no longer able to be filled. You may either leave the swap open indefinitely or cancel it. 
 2. *Are your approval transactions complete?* An approval transaction may still be in progress and hasn't successfully completed yet for one or more of the assets. So, the swap is not yet able to complete the swap. You may confirm the transaction status(es) in Etherscan.  
-3. *Are all of the assets encoded correctly?* One or more of the assets are incorrectly assigned the wrong ERC. E.g. an ERC-1155 being assigned as an ERC-721. You may confirm the asset types in asset's contract on Etherscan or in the details field in an NFT marketplace. 
+3. *Are all of the assets encoded correctly?* One or more of the assets are incorrectly assigned the wrong ERC. E.g. an ERC1155 being assigned as an ERC721. You may confirm the asset types in asset's contract on Etherscan or in the details field in an NFT marketplace. 
 
 <!-- 
   "how it works" is for when you want to understand the service  
@@ -106,3 +106,6 @@ Yes. If you or your partner are swapping multiple items you both need to approve
 In the ethereum world, approving an asset means you can give some program (i.e. smart contract) permission to move your asset. For example, when trading a token on uniswap the contract has to be able to take tokens out (of your address) and give you eth. In the same way, the 0x contracts that power sudoswap need to have your permission to take NFTs/tokens out (of your address) and give you the desired swap items in return. 
 
 Each token has its own contract so for every new asset you need a new approval transaction. For NFTs we can cheat a little bit using a function called `setApprovalForAll` which allows you to let someone (or some contract) spend any ID from an NFT collection. So, you only need to approve one time per NFT collection (even if there are multiple ids).
+
+## Why can't I swap ETH?
+Ethereum has a different permissions model than the ERCs (e.g. ERC20, ERC721, and ERC1155). Generally speaking, no one can take ETH out of your address except you (by spending it on gas or sending it). So, you have to wrap it into WETH first so it can play nicely with the ERC20 standards of the 0x contracts (which Sudoswap uses). 
