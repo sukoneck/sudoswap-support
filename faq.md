@@ -56,10 +56,26 @@ You attempt to accept a swap but are receiving this message:
 ```
 Error: execution reverted: TRANSFER_FAILED
 ```
-There are three common reasons that a swap fails. Ask yourself/partner:
-1. *Do you still own all of the assets?* One or both people may have already sent one of the assets somewhere else. So, the swap is no longer able to be filled. You may either leave the swap open indefinitely or cancel it. 
-2. *Are your approval transactions complete?* An approval transaction may still be in progress and hasn't successfully completed yet for one or more of the assets. So, the swap is not yet able to complete the swap. You may confirm the transaction status(es) in Etherscan.  
-3. *Are all of the assets encoded correctly?* One or more of the assets are incorrectly assigned the wrong ERC. E.g. an ERC1155 being assigned as an ERC721. You may confirm the asset types in asset's contract on Etherscan or in the details field in an NFT marketplace. 
+Here are common reasons that a swap fails. Ask yourself/partner:
+
+### Do you still own all of the assets? 
+- One or both people may have already sent one of the assets somewhere else. Your error message may contain `"code": 3` which about the assets not being available in either wallet (no or not enough WETH / ERC not in the wallet). So, the swap is no longer able to be filled. 
+- You may either leave the swap open indefinitely or cancel it. 
+
+### Are your approval transactions complete? 
+- An approval transaction may still be in progress and hasn't successfully completed yet for one or more of the assets. So, the swap is not yet able to complete the swap. 
+- You may confirm the transaction status(es) in Etherscan.  
+
+### Are all of the assets encoded correctly? 
+- One or more of the assets are incorrectly assigned the wrong ERC. E.g. an ERC1155 being assigned as an ERC721. 
+- You may confirm the asset types in asset's contract on Etherscan or in the details field in an NFT marketplace. 
+
+
+
+
+## Transaction dropped
+You attempt a transaction to either approve assets or accept a swap and are notified that your transaction was `Dropped`. The most common reason a transaction is dropped is because the price for gas was too low that the Ethereum validation notes dropped the transaction. You may resubmit your transaction with an [appropriate](etherscan.io/gastracker) gas price. 
+
 
 <!-- 
   "how it works" is for when you want to understand the service  
