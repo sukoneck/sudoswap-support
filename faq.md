@@ -19,6 +19,7 @@
 - [What happens if my parter accepts a swap but I don't have the assets any more?](#what-happens-if-my-parter-accepts-a-swap-but-i-dont-have-the-assets-any-more)
 - [Do I have to approve all of my assets?](#do-I-have-to-approve-all-of-my-assets)
 - [Why can't I swap ETH?](#why-cant-i-swap-eth)
+- [Which networks are supported?](#which-networks-are-supported)
 
 <!-- 
   "how-to" is for when you want to know how to do something 
@@ -125,3 +126,6 @@ Each token has its own contract so for every new asset you need a new approval t
 
 ## Why can't I swap ETH?
 Ethereum has a different permissions model than the ERCs (e.g. ERC20, ERC721, and ERC1155). Generally speaking, no one can take ETH out of your address except you (by spending it on gas or sending it). So, you have to wrap it into WETH first so it can play nicely with the ERC20 standards of the 0x contracts (which Sudoswap uses). 
+
+## Which networks are supported?
+Only Ethereum Mainnet is supported. Testnets and layer 2s are currently unsupported. 
