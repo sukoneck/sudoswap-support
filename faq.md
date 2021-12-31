@@ -72,7 +72,7 @@ Here are common reasons that a swap fails. Ask yourself/partner:
 - You may confirm the asset types in asset's contract on Etherscan or in the details field in an NFT marketplace. 
 
 ```
-NOTE: If none of these are causing your issue, then there may be an issue with one of the contract for one of the assets. You may try swapping different assets to confirm. 
+NOTE: If none of these are causing your issue, then there may be a compatability issue with the contract for one of the assets. You may try swapping different assets to confirm. 
 ```
 
 ## Transaction dropped
