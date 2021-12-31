@@ -71,8 +71,9 @@ Here are common reasons that a swap fails. Ask yourself/partner:
 - One or more of the assets are incorrectly assigned the wrong ERC. E.g. an ERC1155 being assigned as an ERC721. 
 - You may confirm the asset types in asset's contract on Etherscan or in the details field in an NFT marketplace. 
 
-
-
+```
+NOTE: If none of these are causing your issue, then there may be an issue with one of the contract for one of the assets. You may try swapping different assets to confirm. 
+```
 
 ## Transaction dropped
 You attempt a transaction to either approve assets or accept a swap and are notified that your transaction was `Dropped`. The most common reason a transaction is dropped is because the price for gas was too low that the Ethereum validation notes dropped the transaction. You may resubmit your transaction with an [appropriate](etherscan.io/gastracker) gas price. 
