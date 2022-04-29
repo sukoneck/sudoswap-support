@@ -4,33 +4,33 @@
     2. Add the heading to the Contents section with a link to the header
  -->
 
-# Contents
+# 内容
 
-## [How-to FAQ](#how-to-faq)
-- [How do I add (W)ETH to a swap?](#how-do-i-add-weth-to-a-swap) 
+## [怎么做？疑难解答](#怎么做？ 疑难解答)
+- [如何添加(W)ETH?](#如何添加(W)ETH) 
 
-## [Troubleshooting FAQ](#troubleshooting-faq)
-- [Asset approvals](#asset-approvals)
-- [Transfer failed](#transfer-failed)
+## [疑难解答](#疑难解答)
+- [资产审批](#资产审批)
+- [交易失败](#交易失败)
 
-## [How sudoswap.xyz works FAQ](#how-sudoswapxyz-works-faq)
-- [At what cost?](#at-what-cost)
-- [Are my assets locked once I create a swap?](#are-my-assets-locked-once-I-create-a-swap)
-- [What happens if my parter accepts a swap but I don't have the assets any more?](#what-happens-if-my-parter-accepts-a-swap-but-i-dont-have-the-assets-any-more)
-- [Do I have to approve all of my assets?](#do-I-have-to-approve-all-of-my-assets)
-- [Why can't I swap ETH?](#why-cant-i-swap-eth)
-- [Which networks are supported?](#which-networks-are-supported)
+## [sudoswap.xyz 如何工作疑难解答](#sudoswap.xyz 如何工作疑难解答)
+- [以何种成本?](#以何种成本?)
+- [创建交换后我的资产是否被锁定？](#创建交换后我的资产是否被锁定)
+- [如果我的伙伴接受了交换但我没有对应的资产了怎么办?](#如果我的伙伴接受了交换但我没有对应的资产了怎么办)
+- [我是否必须批准我的所有资产?](#我是否必须批准我的所有资产)
+- [为什么我无法使用ETH交换?](#为什么我无法使用ETH交换)
+- [目前支持哪个网络?](#目前支持哪个网络)
 
 <!-- 
   "how-to" is for when you want to know how to do something 
  -->
 
-# How-to FAQ
+# 怎么做？ 疑难解答
 
-## How do I add (W)ETH to a swap? 
-1. We can only swap ERC20, ERC721, and ERC1155. So, we swap [WETH](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) which is ERC20, never pure ETH. [More info](#why-cant-i-swap-eth).
-2. When creating a swap, select the `+ add assets` button.
-3. Select the `Form` button, fill it out, then submit:
+## 如何添加(W)ETH ? 
+1. 我们只能交换 ERC20、ERC721 和 ERC1155。 所以，我们交换 [WETH](https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)，它是 ERC20，而不是纯ETH。[更多信息](#为什么我无法使用ETH交换).
+2.创建交换时，选择“+ 添加资产”按钮。
+3. 选择`Form` 按钮, 填写如下信息, 然后提交:
     ```
     Asset Type    = ERC20
     Asset Address = 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
@@ -38,96 +38,96 @@
     ```
 
 <!-- 
-  "troubleshooting" is for when you run into an issue 
+  "疑难解答" 是为了您碰到问题的时候
  -->
 
-# Troubleshooting FAQ
+# 疑难解答
 
-## Asset approvals
-You attempt to create a swap but the `create swap` button is greyed out or you are receiving this message:
+## 资产审批
+您尝试创建交换，但“创建交换”按钮显示为灰色，或者您收到以下消息：
 ```
 Please approve all offered assets first.
 ```
-There are two reasons you would get this message:
-1. You have not approved one or more of the assets you are attempting to swap. So, make sure that each of the assets you are offering in the swap are approved.
-2. You submitted the approval transaction, but the approval transaction itself has not completed yet. So, make sure that all of your approval transactions have completed successfully.   
+您收到此提示消息的原因有两个：
+1. 您尚未批准您尝试交换的一项或多项资产。 因此，请确保您在交换中提供的每项资产都已获得批准。
+2. 您提交了审批，但审批本身尚未完成。 因此，请确保您的所有批准交易均已成功完成。
 
-## Transfer failed
-You attempt to accept a swap but are receiving this message:
+## 交易失败
+您尝试接受交换但提示此消息：
 ```
 Error: execution reverted: TRANSFER_FAILED
 ```
-Here are common reasons that a swap fails. Ask yourself/partner:
+以下是交换失败的常见原因。 问自己/伙伴：
 
-### Do you still own all of the assets? 
-- One or both people may have already sent one of the assets somewhere else. Your error message may contain `"code": 3` which about the assets not being available in either wallet (no or not enough WETH / ERC not in the wallet). So, the swap is no longer able to be filled. 
-- You may either leave the swap open indefinitely or cancel it. 
+### 您是否仍然拥有所有资产? 
+- 一方或双方可能已经将其中一项资产发送到其他地方。 提示的错误消息可能包含 `"code": 3`，这表明资产在任一钱包中都不可用（钱包中没有或没有足够的 WETH/ERC）。 因此，交换不再能够被完成。
+- 您可以让这笔交易无限期地存在那里或者取消这笔交换。
 
-### Are your approval transactions complete? 
-- An approval transaction may still be in progress and hasn't successfully completed yet for one or more of the assets. So, the swap is not yet able to complete the swap. 
-- You may confirm the transaction status(es) in Etherscan.  
+### 您的审批交易是否完成? 
+- 一项或多项资产的批准交易可能仍在进行中且尚未成功完成，所以swap还不能完成 。
+- 您可以在 Etherscan 中确认一个或多个交易状态。  
 
-### Are all of the assets encoded correctly? 
-- One or more of the assets are incorrectly assigned the wrong ERC. E.g. an ERC1155 being assigned as an ERC721. 
-- You may confirm the asset types in asset's contract on Etherscan or in the details field in an NFT marketplace. 
+### 是否所有资产都被正确编码? 
+- 一项或多项资产被错误地分配了错误的ERC。 例如ERC1155被分配为ERC721。 
+- 您可以在Etherscan上的资产合约或NFT市场的详细信息字段中确认资产类型。
 
-### Still an issue?
-- If none of these are causing your issue, then there may be a compatability issue with the contract for one of the assets. 
-- You may try swapping different assets. 
+### 仍然存在问题?
+- 如果这些都不是导致发生问题的原因，则可能是其中一项资产的合同存在兼容性问题. 
+- 您可以尝试交换不同的资产。 
 
 
-## Transaction dropped
-You attempt a transaction to either approve assets or accept a swap and are notified that your transaction was `Dropped`. The most common reason a transaction is dropped is because the price for gas was too low that the Ethereum validation notes dropped the transaction. You may resubmit your transaction with an [appropriate](etherscan.io/gastracker) gas price. 
+## 交易被放弃
+您尝试进行交易以批准资产或接受交换，但是被通知您的交易被“放弃”。 交易被放弃的最常见原因是因为gas价格太低，以至于以太坊验证放弃了交易。 您可以使用 [适当的] gas重新提交您的交易 (etherscan.io/gastracker)。
 
 
 <!-- 
-  "how it works" is for when you want to understand the service  
+  "它是如何工作的" 用于您想了解服务的时候  
  -->
 
-# How sudoswap.xyz works FAQ
+# sudoswap.xyz 如何工作疑难解答
 
-## At what cost?
-No fees, yes gas. There are NO fees; Sudoswap is free. However, there are unavoidable transactions that allow the swap to happen. These required transactions are: 
+## 以何种成本?
+没有费用，只有gas费用。是的，没有费用；Sudoswap是免费的。 但是，有一些不可避免的交易来使交换发生。 这些必需的交易是：
 
-1. Both partners have to approve their [assets](#do-I-have-to-approve-all-of-my-assets) to swap. 
-2. The swap accepter has to accept. 
-3. The swap creator has to pay to cancel it (if they want to).
+1. 双方都必须批准他们的[资产](#我必须批准我的所有资产吗)来交换。
+2. 交换的接受者必须接受。
+3. 交换的创建者必须付费才能取消它（如果他们愿意）。
 
-The gas price is up to you as always, but in general the computational cost of each of these transactions is pretty low. 
+gas价格一如既往地由您决定，但总的来说，这些交易中的每一项的计算成本都非常低。
 
-## Are my assets locked once I create a swap?
-No. Assets never leave your wallet until someone accepts the swap.
+## 创建交换后我的资产是否被锁定?
+不会。在有人接受交换之前，资产永远不会离开你的钱包。
 
-To recap, so far: 
-1. You approved for your assets to be swapped *only if that swap is accepted*.
-2. You created a swap agreement.
-3. You are waiting for your partner to approve their assets to be swapped and then for your partner to accept the swap.
+回顾一下，到目前为止: 
+1. 您已批准交换您的资产 *仅在该交换被接受的情况下*。
+2. 您创建了交换协议。
+3. 您正在等待您的伙伴批准他们的资产交换，然后您的合作伙伴接受交换。
 
-So, the assets have not left your wallet. There is no hold or lock on your assets. There are only the approvals and swap agreement you created. 
+因此，资产并没有离开你的钱包。 您的资产没有保留或锁定。只有您创建的批准和交换协议。
 
-## What happens if my parter accepts a swap but I don't have the assets any more?
-The swap transaction fails. 
+## 如果我的伙伴接受了交换但我没有对应的资产了怎么办？
+交换失败。
 
-To recap, so far: 
-1. You approved for your assets to be swapped *only if that swap is accepted*.
-2. You created a swap agreement.
-3. `ISSUE` You sold one or more of the assets in the swap agreement.
-4. Your partner approved for their assets to be swapped.
-5. Your partner accepted the swap.
+回顾一下，到目前为止: 
+1. 您已批准交换您的资产 *仅在该交换被接受的情况下*。
+2. 您创建了交换协议。
+3. `问题` 您出售交换协议中的一项或多项资产。
+4. 您的合作伙伴已批准交换他们的资产。
+5. 你的伙伴接受交换。
 
-So, since the swap cannot be fulfilled (due to step #3), the swap transaction will fail. 
+因此，由于交换无法完成（由于步骤#3），交换交易将失败. 
 
-## Do I have to approve all of my assets?
-### Short answer
-Yes. If you or your partner are swapping multiple items you both need to approve each of them. There is unfortunately no way around this. 
+## 我是否必须批准我的所有资产?
+### 简短的回复
+是的。 如果您或您的伙伴要交换多个条目，您都需要批准每个条目。 很不幸的是，没有办法解决这个问题。
 
-### Long answer
-In the ethereum world, approving an asset means you can give some program (i.e. smart contract) permission to move your asset. For example, when trading a token on uniswap the contract has to be able to take tokens out (of your address) and give you eth. In the same way, the 0x contracts that power sudoswap need to have your permission to take NFTs/tokens out (of your address) and give you the desired swap items in return. 
+### 复杂的回复
+在以太坊世界中，批准资产意味着您可以授予某些程序（即智能合约）移动资产的权限。 例如，在uniswap上交易代币时，合约必须能够（从您的地址）取出代币并给您eth。 同样，为sudoswap提供动力的 0x合约需要获得您的许可才能从（您的地址）取出NFT/代币，并为您提供所需的交换条目作为回报。
 
-Each token has its own contract so for every new asset you need a new approval transaction. For NFTs we can cheat a little bit using a function called `setApprovalForAll` which allows you to let someone (or some contract) spend any ID from an NFT collection. So, you only need to approve one time per NFT collection (even if there are multiple ids).
+每个代币都有自己的合约，因此对于每个新资产，您都需要一个新的批准交易。 对于NFT，我们可以使用一个名为“setApprovalForAll”的函数来简化这个流程，它允许你让某人（或某些合约）使用NFT集合中的任何ID。 因此，每个NFT集合只需要批准一次（即使有多个id）。
 
-## Why can't I swap ETH?
-Ethereum has a different permissions model than the ERCs (e.g. ERC20, ERC721, and ERC1155). Generally speaking, no one can take ETH out of your address except you (by spending it on gas or sending it). So, you have to wrap it into WETH first so it can play nicely with the ERC20 standards of the 0x contracts (which Sudoswap uses). 
+## 为什么我无法使用ETH交换?
+以太坊具有与ERC不同的权限模型（例如 ERC20、ERC721 和 ERC1155）。 一般来说，除了您之外，没有人可以将 ETH 从您的地址中取出（只能通过gas使用或发送ETH）。 因此，您必须首先将其包装到 WETH 中，以便它可以很好地与 0x 合约（Sudoswap 使用0x 合约）的 ERC20 标准配合使用。
 
-## Which networks are supported?
-Only Ethereum Mainnet is supported. Testnets and layer 2s are currently unsupported. 
+## 目前支持哪个网络?
+目前只支持以太主网. 测试网和二层网络目前尚未支持。
